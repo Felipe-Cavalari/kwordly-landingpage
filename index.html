@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kwordly — resposta automática no Direct para comentários do Instagram</title>
+  <meta name="description" content="O kwordly envia uma mensagem no Direct para quem comenta a palavra-chave que você escolheu nos seus posts do Instagram.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="favicon.svg" alt="" width="32" height="32">kwordly</a>
+      <nav aria-label="Principal"><a href="privacidade.html">Privacidade</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <div>
+          <h1>Quem comenta a palavra certa recebe o link no Direct.</h1>
+          <p class="lede">O kwordly acompanha os comentários dos seus posts no Instagram. Quando alguém escreve a palavra-chave que você escolheu, a pessoa recebe na hora uma mensagem privada com o material prometido.</p>
+          <a class="button" href="mailto:fecavalaridev@gmail.com?subject=Quero%20testar%20o%20kwordly">Pedir acesso antecipado</a>
+          <p class="hint">Em desenvolvimento. Liberando para poucos criadores por vez.</p>
+        </div>
+
+        <figure class="demo" aria-label="Exemplo: um comentário com a palavra-chave gera uma mensagem no Direct">
+          <figcaption>Exemplo de comentário com a palavra-chave e a mensagem enviada em resposta.</figcaption>
+          <div class="post">
+            <div class="post-head">
+              <span class="avatar owner" aria-hidden="true">SP</span>
+              <span class="handle">seu.perfil</span>
+            </div>
+            <p class="caption">Comenta <strong>quero</strong> que eu te mando o passo a passo do scraper de cotação do dólar.</p>
+            <div class="comment">
+              <span class="avatar fan" aria-hidden="true">AD</span>
+              <p><span class="handle">ana.dev</span> <span class="keyword">quero</span></p>
+            </div>
+          </div>
+          <div class="dm">
+            <span class="dm-from">Mensagem de seu.perfil para ana.dev</span>
+            <p>Oi, Ana! Aqui está o passo a passo que você pediu: <a href="#" tabindex="-1">seulink.com/scraper</a></p>
+          </div>
+        </figure>
+      </div>
+    </div>
+
+    <section aria-labelledby="como-funciona">
+      <div class="wrap">
+        <h2 id="como-funciona">Como funciona</h2>
+        <ol class="steps">
+          <li>
+            <h3>Conecte sua conta</h3>
+            <p>Você entra com o login oficial do Instagram e autoriza o kwordly a ler comentários e enviar mensagens pela sua conta profissional.</p>
+          </li>
+          <li>
+            <h3>Escolha a palavra e a mensagem</h3>
+            <p>Defina a palavra-chave, o texto da resposta e o link. Pode valer para todos os posts ou só para um.</p>
+          </li>
+          <li>
+            <h3>Deixe a conversa acontecer</h3>
+            <p>Cada comentário com a palavra recebe uma única mensagem privada, enviada pela sua própria conta, sem você precisar abrir o app.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section aria-labelledby="dados">
+      <div class="wrap">
+        <h2 id="dados">O que o kwordly acessa na sua conta</h2>
+        <div class="access">
+          <div>
+            <h3>Usa</h3>
+            <ul>
+              <li>Comentários publicados nos seus posts</li>
+              <li>Nome de usuário de quem comentou</li>
+              <li>Permissão para enviar a resposta privada que você configurou</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Não faz</h3>
+            <ul>
+              <li>Não publica posts nem comenta sem uma regra criada por você</li>
+              <li>Não lê suas outras conversas do Direct</li>
+              <li>Não vende nem compartilha dados para publicidade</li>
+            </ul>
+          </div>
+        </div>
+        <p class="access-note">Os detalhes estão na <a href="privacidade.html">Política de Privacidade</a>. Para apagar seus dados, veja <a href="exclusao-de-dados.html">como solicitar a exclusão</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>kwordly, um projeto de Felipe Cavalari</span>
+      <nav aria-label="Rodapé">
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="exclusao-de-dados.html">Exclusão de dados</a>
+        <a href="mailto:fecavalaridev@gmail.com">fecavalaridev@gmail.com</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

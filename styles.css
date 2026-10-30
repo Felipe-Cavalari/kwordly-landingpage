@@ -1,0 +1,212 @@
+:root {
+  --paper: #f4f6f8;
+  --surface: #ffffff;
+  --ink: #172033;
+  --muted: #5a6478;
+  --line: #dce1e8;
+  --marker: #ffe15a;
+  --link: #2f54d8;
+  --measure: 66ch;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+a { color: var(--link); text-underline-offset: 0.18em; }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--link);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header { padding: 28px 0; }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--ink); text-decoration: none;
+  font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em;
+}
+.brand img { width: 32px; height: 32px; border-radius: 8px; }
+.site-header nav a { color: var(--ink); font-weight: 600; text-decoration: none; }
+.site-header nav a:hover { text-decoration: underline; }
+
+/* Hero */
+.hero { padding: 40px 0 88px; }
+.hero .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 64px;
+  align-items: center;
+}
+.hero h1 {
+  margin: 0 0 24px;
+  font-size: clamp(2.4rem, 5.4vw, 4.1rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  max-width: 14ch;
+}
+.lede { margin: 0 0 32px; color: var(--muted); font-size: 1.1875rem; max-width: 46ch; }
+
+.button {
+  display: inline-block;
+  padding: 14px 22px;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.button:hover { background: #24304a; }
+.hint { margin: 14px 0 0; color: var(--muted); font-size: 0.9375rem; }
+
+/* Demo: a comment that turns into a direct message */
+.demo { display: grid; gap: 18px; margin: 0; }
+.demo figcaption {
+  position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);
+}
+.post {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 24px;
+}
+.post-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  flex: none; display: grid; place-items: center;
+  font-weight: 700; font-size: 0.875rem; color: #fff;
+}
+.avatar.owner { background: var(--ink); }
+.avatar.fan { background: #7a5af5; }
+.handle { font-weight: 700; }
+.caption { margin: 0; color: var(--muted); font-size: 0.9875rem; }
+.comment {
+  display: flex; gap: 12px; align-items: flex-start;
+  margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line);
+}
+.comment p { margin: 0; }
+.keyword {
+  font-weight: 700;
+  padding: 0 4px;
+  background-image: linear-gradient(var(--marker), var(--marker));
+  background-repeat: no-repeat;
+  background-size: 100% 78%;
+  background-position: 0 60%;
+}
+
+.dm {
+  justify-self: end;
+  width: min(100%, 380px);
+  background: var(--ink);
+  color: #fff;
+  border-radius: 18px 18px 6px 18px;
+  padding: 18px 20px;
+}
+.dm-from { display: block; font-size: 0.8125rem; color: #aeb7c9; margin-bottom: 6px; }
+.dm p { margin: 0; }
+.dm a { color: var(--marker); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .keyword { animation: mark 700ms ease-out 500ms both; }
+  .dm { animation: arrive 500ms ease-out 1400ms both; }
+  @keyframes mark { from { background-size: 0% 78%; } to { background-size: 100% 78%; } }
+  @keyframes arrive { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+}
+
+/* Sections */
+section { padding: 72px 0; border-top: 1px solid var(--line); }
+section h2 {
+  margin: 0 0 32px;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  max-width: 24ch;
+}
+
+.steps {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px;
+  counter-reset: step;
+}
+.steps li { counter-increment: step; }
+.steps li::before {
+  content: counter(step);
+  display: grid; place-items: center;
+  width: 40px; height: 40px; margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--marker);
+  font-weight: 800;
+}
+.steps h3 { margin: 0 0 8px; font-size: 1.1875rem; }
+.steps p { margin: 0; color: var(--muted); }
+
+.access { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; }
+.access h3 { margin: 0 0 12px; font-size: 1.0625rem; }
+.access ul { margin: 0; padding-left: 1.2em; color: var(--muted); }
+.access li + li { margin-top: 6px; }
+.access-note { margin: 32px 0 0; max-width: var(--measure); }
+
+/* Footer */
+.site-footer { padding: 40px 0 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9375rem; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
+
+/* Long-form legal pages */
+.doc { padding: 24px 0 80px; }
+.doc .wrap { max-width: calc(var(--measure) + 40px); }
+.doc h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+.doc .updated { margin: 0 0 40px; color: var(--muted); }
+.doc h2 { margin: 48px 0 12px; font-size: 1.375rem; letter-spacing: -0.01em; scroll-margin-top: 24px; }
+.doc h3 { margin: 28px 0 8px; font-size: 1.0625rem; }
+.doc p, .doc li { max-width: var(--measure); }
+.doc ul, .doc ol { padding-left: 1.3em; }
+.doc li + li { margin-top: 6px; }
+.doc .callout {
+  margin: 24px 0;
+  padding: 18px 20px;
+  background: var(--surface);
+  border-left: 4px solid var(--marker);
+  border-radius: 0 10px 10px 0;
+}
+.doc .callout p { margin: 0; }
+.doc .callout p + p { margin-top: 8px; }
+
+@media (max-width: 860px) {
+  .hero { padding: 16px 0 64px; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 48px; }
+  .steps { grid-template-columns: 1fr; gap: 32px; }
+  .access { grid-template-columns: 1fr; gap: 32px; }
+  section { padding: 56px 0; }
+}
+
+@media (max-width: 420px) {
+  .wrap { padding: 0 16px; }
+  .post { padding: 18px; }
+  .dm { justify-self: stretch; }
+}
